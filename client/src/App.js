@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
+
+import Nav from './components/common/Nav'
+import Home from './components/common/Home'
+import SpaceIndex from './components/spaces/SpaceIndex'
+import SpaceShow from './components/spaces/SpaceShow'
+import SpaceNew from './components/spaces/SpaceNew'
+import SpaceEdit from './components/spaces/SpaceEdit'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <BrowserRouter>
+      <Nav />
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/spaces/new" component={SpaceNew} />
+        <Route path="/spaces/spaceshow" component={SpaceShow} />
+        <Route path="/spaces/edit" component={SpaceEdit} />
+        <Route path="/spaces" component={SpaceIndex} />
+      </Switch>
+    </BrowserRouter>
+  )
 }
 
-export default App;
+export default App
