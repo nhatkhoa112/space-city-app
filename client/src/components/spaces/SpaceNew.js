@@ -7,4 +7,4 @@ function SpaceNew() {
   )
 }
 
-export default SpaceNew 
+export default SpaceNew

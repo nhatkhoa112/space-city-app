@@ -7,4 +7,4 @@ function SpaceShow() {
   )
 }
 
-export default SpaceShow 
+export default SpaceShow

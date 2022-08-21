@@ -5,9 +5,11 @@ import router from './config/router.js'
 import logger from './lib/logger.js'
 import errorHandler from './lib/errorHandler.js'
 import path from 'path'
+import cors from 'cors'
 
 const app = express()
 const __dirname = path.resolve()
+app.use(cors())
 
 async function startServer() {
   try {

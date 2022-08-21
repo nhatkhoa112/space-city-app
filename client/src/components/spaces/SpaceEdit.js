@@ -7,4 +7,4 @@ function SpaceEdit() {
   )
 }
 
-export default SpaceEdit 
+export default SpaceEdit
