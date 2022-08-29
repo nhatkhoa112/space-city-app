@@ -8,7 +8,7 @@ import { Button, Form, Divider } from 'semantic-ui-react'
 function Register() {
 
   const history = useHistory()
-  const { formdata, errors, handleChange, setErrors } = useForm({
+  const { formdata, errors,  handleChange, setErrors } = useForm({
     username: '',
     firstName: '',
     lastName: '',

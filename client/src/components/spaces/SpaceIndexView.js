@@ -1,50 +1,63 @@
 import React from 'react'
-import { getAllSpaces } from '../lib/api'
-import Slider from 'react-slick'
+// import { Link } from 'react-router-dom'
+// import Slider from 'react-slick'
+import SpaceSlider from './indexPage/SpaceSlider'
+import ReccomendedSlider from './ReccomendedSlider'
+import SpaceIndexCategories from './indexPage/SpaceIndexCategories'
+import WelcomeBanner from './WelcomeBanner'
+// import { getUserProfile, headers } from '../lib/api'
+import SpaceIndexMap from './indexPage/SpaceIndexMap'
+import { isAuthenticated } from '../lib/auth'
+
 
 function SpaceIndexView() {
-
-  const settings = {
-    dots: true,
-    infinite: true,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 2000,
-    pauseOnHover: true
-  }
-
-  const [spaces, setSpaces] = React.useState([])
-  console.log(spaces)
-
-  React.useEffect(() => {
-    const getSpaces = async () => {
-      try {
-        const { data } = await getAllSpaces()
-        setSpaces(data)
-
-      } catch (err) {
-        console.log(err)
-      }
-    }
-    getSpaces()
-  }, [])
+  const isLoggedIn = isAuthenticated()
 
   return (
-    <div>
-      <Slider {...settings}>
-        <img src={spaces[0].image} className="ui small image"/>
-        <img src={spaces[1].image} className="ui small image"/>
-        <img src={spaces[2].image} className="ui small image"/>
-        <img src={spaces[3].image} className="ui small image"/>
-        <img src={spaces[4].image} className="ui small image"/>
-        <img src={spaces[5].image} className="ui small image"/>
-        <img src={spaces[6].image} className="ui small image"/>
-      </Slider>
-    </div>
+
+    <>
+
+
+      <div className="ui container fly-in no-padding">
+        <WelcomeBanner />
+
+        <div className="homepage-main-content-wrapper">
+
+          <div className="homepage-slider-section">
+            <SpaceSlider />
+          </div>
+
+          {/* { isLoggedIn &&
+        <ReccomendedSlider 
+        />
+      } */}
+
+
+          
+          <div className="mapbox-wrapper">
+            <SpaceIndexMap />
+          </div>
+
+          {isLoggedIn &&
+            <ReccomendedSlider
+            />
+          }
+
+          <SpaceIndexCategories />
+
+        </div>
+
+        <footer className="footer">
+          <p>&copy; CitySpace</p>
+          <p>2020 </p>
+        </footer>
+
+      </div>
+
+
+    </>
   )
+
+
 }
-
-
-
 export default SpaceIndexView
