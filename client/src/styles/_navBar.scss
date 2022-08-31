@@ -8,7 +8,6 @@
 
 .ui.menu>.container, .ui.menu>.grid {
   border-width: 0px;
-    
 }
 
 .ui.menu {
@@ -24,5 +23,13 @@
   margin-bottom: 200px;
   background-color:white;
   box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
-  
+}
+
+.ui.menu>.navbar-item>.item {
+  transition: 0.3s ease-in-out;
+  &:hover{
+    color: #2185d0 !important;
+    font-weight: 500;
+    transform: scale(1.1);
+  }
 }

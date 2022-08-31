@@ -12,6 +12,7 @@ import SpaceCategories from  './components/spaces/SpaceCategories'
 import Register from './components/auth/Register'
 import Login from './components/auth/Login'
 
+
 function App() {
   return (
     <BrowserRouter>
