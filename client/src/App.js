@@ -11,6 +11,7 @@ import SpaceCategories from  './components/spaces/SpaceCategories'
 
 import Register from './components/auth/Register'
 import Login from './components/auth/Login'
+import Profile from './components/users/Profile'
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
         <Route path="/spaces" component={SpaceIndexView} />
         <Route path="/register" component={Register} />
         <Route path="/login" component={Login} />
+        <Route path="/profile/:id" component={Profile} />
       </Switch>
     </BrowserRouter>
   )
