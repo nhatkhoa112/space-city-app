@@ -12,6 +12,8 @@ import SpaceCategories from  './components/spaces/SpaceCategories'
 import Register from './components/auth/Register'
 import Login from './components/auth/Login'
 import Profile from './components/users/Profile'
+import OtherUserProfile from './components/users/OtherUserProfile'
+
 
 
 function App() {
@@ -28,6 +30,7 @@ function App() {
         <Route path="/register" component={Register} />
         <Route path="/login" component={Login} />
         <Route path="/profile/:id" component={Profile} />
+        <Route path="/users/:id" component={OtherUserProfile} />
       </Switch>
     </BrowserRouter>
   )

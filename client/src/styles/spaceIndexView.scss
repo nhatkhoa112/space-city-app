@@ -203,3 +203,23 @@ h6 {
     }
   }
 }
+
+#root > div.ui.container.fly-in.no-padding > div.homepage-main-content-wrapper > div.mapbox-wrapper > div > div{
+  width: 880px !important; 
+}
+
+
+@media only screen and (max-width: 900px){
+
+  .map-container,
+  .homepage-user-recommended-wrapper,
+  .slider-container{
+    width: 100%;
+  }
+
+  #root > div.ui.container.fly-in.no-padding > div.homepage-main-content-wrapper > div.mapbox-wrapper > div > div{
+    width: 100% !important;
+  }
+
+
+}
